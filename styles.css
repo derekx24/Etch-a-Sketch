@@ -17,6 +17,15 @@ body {
     padding: 30px;
 }
 
+.container {
+    display: flex;
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid {
     display: grid;
     width: 550px;
@@ -29,6 +38,7 @@ body {
 }
 
 .slider-container {
+    align-self: center;
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -68,4 +78,37 @@ body {
     position: absolute;
     top: 47px;
     left: 0px;
+}
+
+.controls {
+    margin-left: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.1);
+}
+
+.controls > * {
+    font-size: 24px;
+    margin: 30px;
+    width: 200px;
+    background-color:rgb(234, 255, 230);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+}
+
+input[type='color'] {
+    width: 90px;
+    height: 90px;
+    border: none;
+    border-radius: 50%;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

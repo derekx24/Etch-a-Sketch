@@ -11,13 +11,22 @@
     <div class="header">
         <h1>Etch-A-Sketch</h1>
     </div>
-    <div id="grid" class="grid"></div>
-    <div class="slider-container">
-        <div id="value">16 x 16</div>
-        <div id="position"></div>
-        <input class="size-slider" id="size-slider" type="range" value="16" min="1" max="100" />
+    <div class="container">
+        <div class="canvas">
+            <div id="grid" class="grid"></div>
+            <div class="slider-container">
+                <div id="value">16 x 16</div>
+                <div id="position"></div>
+                <input class="size-slider" id="size-slider" type="range" value="16" min="1" max="100" />
+            </div>
+        </div>
+        <div class="controls">
+            <input type="color" id="color-wheel">
+            <button id="rainbow">Rainbow Mode</button>
+            <button id="erase">Eraser</button>
+        </div> 
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
