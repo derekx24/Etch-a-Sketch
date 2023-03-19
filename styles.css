@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: optima, sans-serif;
+}
+
+.header {
+    text-align: center;
+    font-size: 32px;
+    padding: 30px;
+}
+
+.grid {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    background-color: var(--secondary-light);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.grid-element {
+    background-color: bisque;
+}
