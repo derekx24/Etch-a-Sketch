@@ -2,6 +2,13 @@
     margin: 0px;
     padding: 0px;
     font-family: optima, sans-serif;
+    background-color: rgb(255, 238, 222);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header {
@@ -12,12 +19,53 @@
 
 .grid {
     display: grid;
-    width: 500px;
-    height: 500px;
-    background-color: var(--secondary-light);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 550px;
+    height: 550px;
+    margin-bottom: 30px;
 }
 
 .grid-element {
-    background-color: bisque;
+    background-color: rgb(251, 246, 240);
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    position: relative;
+}
+
+#value {
+    font-size: 24px;
+    margin:10px;
+}
+
+.size-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 250px;
+    height: 6px;
+    background: #b7b5b5;
+    border-radius: 5px;
+}
+
+.size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #093e60;
+    cursor: pointer;
+}
+
+#position {
+    width: 16%;
+    height: 6px;
+    background-color: #093e60;
+    border-radius: 5px;
+    position: absolute;
+    top: 47px;
+    left: 0px;
 }
