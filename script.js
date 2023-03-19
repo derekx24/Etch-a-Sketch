@@ -2,7 +2,7 @@ let GRID_SIZE = 16;
 let mouseDown = false;
 let penColor = `#000000`;
 let isRainbow = false;
-//let isErase = false;
+let isErase = false;
 
 const grid = document.getElementById('grid');
 const slider = document.getElementById('size-slider');
@@ -10,7 +10,7 @@ const value = document.getElementById('value');
 const position = document.getElementById('position');
 const colorWheel = document.getElementById('color-wheel');
 const rainbow = document.getElementById('rainbow');
-//const erase = document.getElementById('erase');
+const erase = document.getElementById('erase');
 
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
@@ -18,7 +18,7 @@ slider.onchange = (e) => updateSize(e.target.value);
 slider.onmousemove = (e) => updateValue(e.target.value);
 colorWheel.oninput = (e) => updateColor(e.target.value);
 rainbow.onclick = () => toggleRainbow();
-//erase.onclick = () => toggleErase();
+erase.onclick = () => toggleErase();
 
 function reloadGrid() {
     grid.innerHTML = '';
@@ -42,6 +42,8 @@ function draw(e) {
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
             e.target.style.backgroundColor = `rgb(${r},${g},${b})`;
+        } else if (isErase) {
+            e.target.style.backgroundColor = `rgb(251, 246, 240)`;
         } else {
             e.target.style.backgroundColor = penColor;
         }
@@ -49,11 +51,23 @@ function draw(e) {
 }
 
 function updateColor(newColor) {
+    if(isErase) toggleErase();
+    if(isRainbow) toggleRainbow();
     penColor = newColor;
 }
 
 function toggleRainbow() {
+    if (isErase) {
+        toggleErase();
+    }
     isRainbow = !isRainbow;
+}
+
+function toggleErase() {
+    if (isRainbow) {
+        toggleRainbow();
+    }
+    isErase = !isErase;
 }
 
 function createGrid (v) {
