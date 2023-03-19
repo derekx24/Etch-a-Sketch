@@ -1,3 +1,6 @@
+const DEFAULT_BTN_COLOR = `#EAFFE6`;
+const USING_BTN_COLOR = `#B4FFA5`;
+
 let GRID_SIZE = 16;
 let mouseDown = false;
 let penColor = `#000000`;
@@ -62,6 +65,8 @@ function toggleRainbow() {
     if (isErase) {
         toggleErase();
     }
+    if (isRainbow) rainbow.style.backgroundColor = DEFAULT_BTN_COLOR; 
+    else rainbow.style.backgroundColor = USING_BTN_COLOR;
     isRainbow = !isRainbow;
 }
 
@@ -69,6 +74,8 @@ function toggleErase() {
     if (isRainbow) {
         toggleRainbow();
     }
+    if (isErase) erase.style.backgroundColor = DEFAULT_BTN_COLOR;
+    else erase.style.backgroundColor = USING_BTN_COLOR;
     isErase = !isErase;
 }
 
