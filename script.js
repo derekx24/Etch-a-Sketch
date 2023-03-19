@@ -11,6 +11,7 @@ const position = document.getElementById('position');
 const colorWheel = document.getElementById('color-wheel');
 const rainbow = document.getElementById('rainbow');
 const erase = document.getElementById('erase');
+const clear = document.getElementById('clear');
 
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
@@ -19,6 +20,7 @@ slider.onmousemove = (e) => updateValue(e.target.value);
 colorWheel.oninput = (e) => updateColor(e.target.value);
 rainbow.onclick = () => toggleRainbow();
 erase.onclick = () => toggleErase();
+clear.onclick = () => clearBoard();
 
 function reloadGrid() {
     grid.innerHTML = '';
@@ -68,6 +70,10 @@ function toggleErase() {
         toggleRainbow();
     }
     isErase = !isErase;
+}
+
+function clearBoard() {
+    reloadGrid(GRID_SIZE);
 }
 
 function createGrid (v) {
