@@ -41,7 +41,7 @@ function updateValue(v) {
 }
 
 function draw(e) {
-    if (mouseDown) {
+    if (e.type === 'mouseover' && !mouseDown) return;
         if(isRainbow) {
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
@@ -51,8 +51,7 @@ function draw(e) {
             e.target.style.backgroundColor = `rgb(251, 246, 240)`;
         } else {
             e.target.style.backgroundColor = penColor;
-        }
-    }
+        }   
 }
 
 function updateColor(newColor) {
@@ -90,6 +89,7 @@ function createGrid (v) {
     for(let i = 0; i < v*v; i++) {
         const gridElement = document.createElement('div');
         gridElement.classList.add("grid-element");
+        gridElement.addEventListener('mousedown', draw);
         gridElement.addEventListener('mouseover', draw);
         grid.appendChild(gridElement);
     }
